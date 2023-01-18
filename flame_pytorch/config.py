@@ -28,3 +28,13 @@ parser.add_argument(
 parser.add_argument(
     "--shape_params", type=int, default=100, help="the number of shape parameters"
 )
+
+parser.add_argument(
+    "--expression_params",
+    type=int,
+    default=50,
+    help="the number of expression parameters",
+)
+
+parser.add_argument(
+    "--pose_params", type=int, default=6, help="the number of pose parameters"
