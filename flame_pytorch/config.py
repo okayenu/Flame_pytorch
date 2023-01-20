@@ -38,3 +38,13 @@ parser.add_argument(
 
 parser.add_argument(
     "--pose_params", type=int, default=6, help="the number of pose parameters"
+)
+
+# Training hyper-parameters
+
+parser.add_argument(
+    "--use_face_contour",
+    default=True,
+    type=bool,
+    help="If true apply the landmark loss on also on the face contour.",
+)
