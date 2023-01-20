@@ -48,3 +48,13 @@ parser.add_argument(
     type=bool,
     help="If true apply the landmark loss on also on the face contour.",
 )
+
+parser.add_argument(
+    "--use_3D_translation",
+    default=True,  # Flase for RingNet project
+    type=bool,
+    help="If true apply the landmark loss on also on the face contour.",
+)
+
+parser.add_argument(
+    "--optimize_eyeballpose",
