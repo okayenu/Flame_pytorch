@@ -58,3 +58,13 @@ parser.add_argument(
 
 parser.add_argument(
     "--optimize_eyeballpose",
+    default=True,  # False for For RingNet project
+    type=bool,
+    help="If true optimize for the eyeball pose.",
+)
+
+parser.add_argument(
+    "--optimize_neckpose",
+    default=True,  # False For RingNet project
+    type=bool,
+    help="If true optimize for the neck pose.",
