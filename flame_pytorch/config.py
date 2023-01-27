@@ -68,3 +68,19 @@ parser.add_argument(
     default=True,  # False For RingNet project
     type=bool,
     help="If true optimize for the neck pose.",
+)
+
+parser.add_argument("--num_worker", type=int, default=4, help="pytorch number worker.")
+
+parser.add_argument("--batch_size", type=int, default=8, help="Training batch size.")
+
+parser.add_argument("--ring_margin", type=float, default=0.5, help="ring margin.")
+
+parser.add_argument(
+    "--ring_loss_weight", type=float, default=1.0, help="weight on ring loss."
+)
+
+
+def get_config():
+    config = parser.parse_args()
+    return config
