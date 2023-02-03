@@ -18,3 +18,13 @@ Any use of the computer program without a valid license is prohibited and liable
 Copyright 2019 Max-Planck-Gesellschaft zur Foerderung der Wissenschaften e.V. (MPG). acting on behalf of its
 Max Planck Institute for Intelligent Systems and the Max Planck Institute for Biological Cybernetics.
 All rights reserved.
+
+More information about FLAME is available at http://flame.is.tue.mpg.de.
+
+For questions regarding the PyTorch implementation please contact soubhik.sanyal@tuebingen.mpg.de
+"""
+# Modified from smplx code [https://github.com/vchoutas/smplx] for FLAME
+
+import pickle
+
+import numpy as np
