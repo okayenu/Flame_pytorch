@@ -28,3 +28,13 @@ For questions regarding the PyTorch implementation please contact soubhik.sanyal
 import pickle
 
 import numpy as np
+import torch
+import torch.nn as nn
+from smplx.lbs import batch_rodrigues, lbs, vertices2landmarks
+from smplx.utils import Struct, rot_mat_to_euler, to_np, to_tensor
+
+
+class FLAME(nn.Module):
+    """
+    Given flame parameters this class generates a differentiable FLAME function
+    which outputs the a mesh and 3D facial landmarks
