@@ -38,3 +38,13 @@ class FLAME(nn.Module):
     """
     Given flame parameters this class generates a differentiable FLAME function
     which outputs the a mesh and 3D facial landmarks
+    """
+
+    def __init__(self, config):
+        super(FLAME, self).__init__()
+        print("creating the FLAME Decoder")
+        with open(config.flame_model_path, "rb") as f:
+            self.flame_model = Struct(**pickle.load(f, encoding="latin1"))
+        self.NECK_IDX = 1
+        self.batch_size = config.batch_size
+        self.dtype = torch.float32
