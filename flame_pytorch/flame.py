@@ -48,3 +48,13 @@ class FLAME(nn.Module):
         self.NECK_IDX = 1
         self.batch_size = config.batch_size
         self.dtype = torch.float32
+        self.use_face_contour = config.use_face_contour
+        self.faces = self.flame_model.f
+        self.register_buffer(
+            "faces_tensor",
+            to_tensor(to_np(self.faces, dtype=np.int64), dtype=torch.long),
+        )
+
+        # Fixing remaining Shape betas
+        # There are total 300 shape parameters to control FLAME; But one can use the first few parameters to express
+        # the shape. For example 100 shape parameters are used for RingNet project
