@@ -58,3 +58,13 @@ class FLAME(nn.Module):
         # Fixing remaining Shape betas
         # There are total 300 shape parameters to control FLAME; But one can use the first few parameters to express
         # the shape. For example 100 shape parameters are used for RingNet project
+        default_shape = torch.zeros(
+            [self.batch_size, 300 - config.shape_params],
+            dtype=self.dtype,
+            requires_grad=False,
+        )
+        self.register_parameter(
+            "shape_betas", nn.Parameter(default_shape, requires_grad=False)
+        )
+
+        # Fixing remaining expression betas
