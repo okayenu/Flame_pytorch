@@ -88,3 +88,13 @@ class FLAME(nn.Module):
         )
 
         default_neck_pose = torch.zeros(
+            [self.batch_size, 3], dtype=self.dtype, requires_grad=False
+        )
+        self.register_parameter(
+            "neck_pose", nn.Parameter(default_neck_pose, requires_grad=False)
+        )
+
+        # Fixing 3D translation since we use translation in the image plane
+
+        self.use_3D_translation = config.use_3D_translation
+
