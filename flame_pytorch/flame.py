@@ -98,3 +98,13 @@ class FLAME(nn.Module):
 
         self.use_3D_translation = config.use_3D_translation
 
+        default_transl = torch.zeros(
+            [self.batch_size, 3], dtype=self.dtype, requires_grad=False
+        )
+        self.register_parameter(
+            "transl", nn.Parameter(default_transl, requires_grad=False)
+        )
+
+        # The vertices of the template model
+        self.register_buffer(
+            "v_template",
