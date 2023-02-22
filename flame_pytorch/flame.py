@@ -108,3 +108,13 @@ class FLAME(nn.Module):
         # The vertices of the template model
         self.register_buffer(
             "v_template",
+            to_tensor(to_np(self.flame_model.v_template), dtype=self.dtype),
+        )
+
+        # The shape components
+        shapedirs = self.flame_model.shapedirs
+        # The shape components
+        self.register_buffer("shapedirs", to_tensor(to_np(shapedirs), dtype=self.dtype))
+
+        j_regressor = to_tensor(to_np(self.flame_model.J_regressor), dtype=self.dtype)
+        self.register_buffer("J_regressor", j_regressor)
