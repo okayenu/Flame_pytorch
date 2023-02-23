@@ -118,3 +118,13 @@ class FLAME(nn.Module):
 
         j_regressor = to_tensor(to_np(self.flame_model.J_regressor), dtype=self.dtype)
         self.register_buffer("J_regressor", j_regressor)
+
+        # Pose blend shape basis
+        num_pose_basis = self.flame_model.posedirs.shape[-1]
+        posedirs = np.reshape(self.flame_model.posedirs, [-1, num_pose_basis]).T
+        self.register_buffer("posedirs", to_tensor(to_np(posedirs), dtype=self.dtype))
+
+        # indices of parents for each joints
+        parents = to_tensor(to_np(self.flame_model.kintree_table[0])).long()
+        parents[0] = -1
+        self.register_buffer("parents", parents)
