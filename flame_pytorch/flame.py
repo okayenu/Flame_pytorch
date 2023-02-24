@@ -128,3 +128,13 @@ class FLAME(nn.Module):
         parents = to_tensor(to_np(self.flame_model.kintree_table[0])).long()
         parents[0] = -1
         self.register_buffer("parents", parents)
+
+        self.register_buffer(
+            "lbs_weights", to_tensor(to_np(self.flame_model.weights), dtype=self.dtype)
+        )
+
+        # Static and Dynamic Landmark embeddings for FLAME
+
+        with open(config.static_landmark_embedding_path, "rb") as f:
+            static_embeddings = Struct(**pickle.load(f, encoding="latin1"))
+
