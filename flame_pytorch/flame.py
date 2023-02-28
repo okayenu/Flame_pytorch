@@ -138,3 +138,13 @@ class FLAME(nn.Module):
         with open(config.static_landmark_embedding_path, "rb") as f:
             static_embeddings = Struct(**pickle.load(f, encoding="latin1"))
 
+        lmk_faces_idx = (static_embeddings.lmk_face_idx).astype(np.int64)
+        self.register_buffer(
+            "lmk_faces_idx", torch.tensor(lmk_faces_idx, dtype=torch.long)
+        )
+        lmk_bary_coords = static_embeddings.lmk_b_coords
+        self.register_buffer(
+            "lmk_bary_coords", torch.tensor(lmk_bary_coords, dtype=self.dtype)
+        )
+
+        if self.use_face_contour:
