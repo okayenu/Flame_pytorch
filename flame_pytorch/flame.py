@@ -148,3 +148,13 @@ class FLAME(nn.Module):
         )
 
         if self.use_face_contour:
+            conture_embeddings = np.load(
+                config.dynamic_landmark_embedding_path,
+                allow_pickle=True,
+                encoding="latin1",
+            )
+            conture_embeddings = conture_embeddings[()]
+            dynamic_lmk_faces_idx = np.array(conture_embeddings["lmk_face_idx"]).astype(
+                np.int64
+            )
+            dynamic_lmk_faces_idx = torch.tensor(
