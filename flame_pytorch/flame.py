@@ -168,3 +168,13 @@ class FLAME(nn.Module):
                 dynamic_lmk_bary_coords, dtype=self.dtype
             )
             self.register_buffer("dynamic_lmk_bary_coords", dynamic_lmk_bary_coords)
+
+            neck_kin_chain = []
+            curr_idx = torch.tensor(self.NECK_IDX, dtype=torch.long)
+            while curr_idx != -1:
+                neck_kin_chain.append(curr_idx)
+                curr_idx = self.parents[curr_idx]
+            self.register_buffer("neck_kin_chain", torch.stack(neck_kin_chain))
+
+    def _find_dynamic_lmk_idx_and_bcoords(
+        self,
