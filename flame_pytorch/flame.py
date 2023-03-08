@@ -178,3 +178,13 @@ class FLAME(nn.Module):
 
     def _find_dynamic_lmk_idx_and_bcoords(
         self,
+        vertices,
+        pose,
+        dynamic_lmk_faces_idx,
+        dynamic_lmk_b_coords,
+        neck_kin_chain,
+        dtype=torch.float32,
+    ):
+        """
+        Selects the face contour depending on the reletive position of the head
+        Input:
