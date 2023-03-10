@@ -198,3 +198,13 @@ class FLAME(nn.Module):
             The contour face indexes and the corresponding barycentric weights
         Source: Modified for batches from https://github.com/vchoutas/smplx
         """
+
+        batch_size = vertices.shape[0]
+
+        aa_pose = torch.index_select(pose.view(batch_size, -1, 3), 1, neck_kin_chain)
+        rot_mats = batch_rodrigues(aa_pose.view(-1, 3)).view(batch_size, -1, 3, 3)
+
+        rel_rot_mat = (
+            torch.eye(3, device=vertices.device, dtype=dtype)
+            .unsqueeze_(dim=0)
+            .expand(batch_size, -1, -1)
