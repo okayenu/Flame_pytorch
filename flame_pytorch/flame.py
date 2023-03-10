@@ -188,3 +188,13 @@ class FLAME(nn.Module):
         """
         Selects the face contour depending on the reletive position of the head
         Input:
+            vertices: N X num_of_vertices X 3
+            pose: N X full pose
+            dynamic_lmk_faces_idx: The list of contour face indexes
+            dynamic_lmk_b_coords: The list of contour barycentric weights
+            neck_kin_chain: The tree to consider for the relative rotation
+            dtype: Data type
+        return:
+            The contour face indexes and the corresponding barycentric weights
+        Source: Modified for batches from https://github.com/vchoutas/smplx
+        """
