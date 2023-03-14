@@ -208,3 +208,13 @@ class FLAME(nn.Module):
             torch.eye(3, device=vertices.device, dtype=dtype)
             .unsqueeze_(dim=0)
             .expand(batch_size, -1, -1)
+        )
+        for idx in range(len(neck_kin_chain)):
+            rel_rot_mat = torch.bmm(rot_mats[:, idx], rel_rot_mat)
+
+        y_rot_angle = torch.round(
+            torch.clamp(-rot_mat_to_euler(rel_rot_mat) * 180.0 / np.pi, max=39)
+        ).to(dtype=torch.long)
+        neg_mask = y_rot_angle.lt(0).to(dtype=torch.long)
+        mask = y_rot_angle.lt(-39).to(dtype=torch.long)
+        neg_vals = mask * 78 + (1 - mask) * (39 - y_rot_angle)
