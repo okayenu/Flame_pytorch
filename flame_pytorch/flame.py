@@ -218,3 +218,13 @@ class FLAME(nn.Module):
         neg_mask = y_rot_angle.lt(0).to(dtype=torch.long)
         mask = y_rot_angle.lt(-39).to(dtype=torch.long)
         neg_vals = mask * 78 + (1 - mask) * (39 - y_rot_angle)
+        y_rot_angle = neg_mask * neg_vals + (1 - neg_mask) * y_rot_angle
+
+        dyn_lmk_faces_idx = torch.index_select(dynamic_lmk_faces_idx, 0, y_rot_angle)
+        dyn_lmk_b_coords = torch.index_select(dynamic_lmk_b_coords, 0, y_rot_angle)
+
+        return dyn_lmk_faces_idx, dyn_lmk_b_coords
+
+    def forward(
+        self,
+        shape_params=None,
