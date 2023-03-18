@@ -228,3 +228,13 @@ class FLAME(nn.Module):
     def forward(
         self,
         shape_params=None,
+        expression_params=None,
+        pose_params=None,
+        neck_pose=None,
+        eye_pose=None,
+        transl=None,
+    ):
+        """
+        Input:
+            shape_params: N X number of shape parameters
+            expression_params: N X number of expression parameters
