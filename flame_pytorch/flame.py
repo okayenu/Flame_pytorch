@@ -238,3 +238,13 @@ class FLAME(nn.Module):
         Input:
             shape_params: N X number of shape parameters
             expression_params: N X number of expression parameters
+            pose_params: N X number of pose parameters
+        return:
+            vertices: N X V X 3
+            landmarks: N X number of landmarks X 3
+        """
+        betas = torch.cat(
+            [shape_params, self.shape_betas, expression_params, self.expression_betas],
+            dim=1,
+        )
+        neck_pose = neck_pose if neck_pose is not None else self.neck_pose
