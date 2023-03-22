@@ -248,3 +248,13 @@ class FLAME(nn.Module):
             dim=1,
         )
         neck_pose = neck_pose if neck_pose is not None else self.neck_pose
+        eye_pose = eye_pose if eye_pose is not None else self.eye_pose
+        transl = transl if transl is not None else self.transl
+        full_pose = torch.cat(
+            [pose_params[:, :3], neck_pose, pose_params[:, 3:], eye_pose], dim=1
+        )
+        template_vertices = self.v_template.unsqueeze(0).repeat(self.batch_size, 1, 1)
+
+        vertices, _ = lbs(
+            betas,
+            full_pose,
