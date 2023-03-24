@@ -268,3 +268,31 @@ class FLAME(nn.Module):
 
         lmk_faces_idx = self.lmk_faces_idx.unsqueeze(dim=0).repeat(self.batch_size, 1)
         lmk_bary_coords = self.lmk_bary_coords.unsqueeze(dim=0).repeat(
+            self.batch_size, 1, 1
+        )
+        if self.use_face_contour:
+
+            (
+                dyn_lmk_faces_idx,
+                dyn_lmk_bary_coords,
+            ) = self._find_dynamic_lmk_idx_and_bcoords(
+                vertices,
+                full_pose,
+                self.dynamic_lmk_faces_idx,
+                self.dynamic_lmk_bary_coords,
+                self.neck_kin_chain,
+                dtype=self.dtype,
+            )
+
+            lmk_faces_idx = torch.cat([dyn_lmk_faces_idx, lmk_faces_idx], 1)
+            lmk_bary_coords = torch.cat([dyn_lmk_bary_coords, lmk_bary_coords], 1)
+
+        landmarks = vertices2landmarks(
+            vertices, self.faces_tensor, lmk_faces_idx, lmk_bary_coords
+        )
+
+        if self.use_3D_translation:
+            landmarks += transl.unsqueeze(dim=1)
+            vertices += transl.unsqueeze(dim=1)
+
+        return vertices, landmarks
