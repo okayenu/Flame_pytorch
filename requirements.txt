@@ -3,3 +3,4 @@ torch
 torchvision
 chumpy==0.70
 pyrender==0.1.39
+trimesh==3.6.18
