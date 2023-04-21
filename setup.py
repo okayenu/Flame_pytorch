@@ -37,3 +37,16 @@ EXCLUDES = ()
 def read(*parts):
     """
     returns contents of file
+    """
+    with codecs.open(os.path.join(PROJECT, *parts), "rb", "utf-8") as file:
+        return file.read()
+
+
+def get_requires(path=REQUIRE_PATH):
+    """
+    generates requirements from file path given as REQUIRE_PATH
+    """
+    for line in read(path).splitlines():
+        line = line.strip()
+        if line and not line.startswith("#"):
+            yield line
