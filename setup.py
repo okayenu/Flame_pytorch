@@ -24,3 +24,16 @@ CLASSIFIERS = [
     "Programming Language :: Python :: 3",
 ]
 
+# Important Paths
+PROJECT = os.path.abspath(os.path.dirname(__file__))
+REQUIRE_PATH = "requirements.txt"
+PKG_DESCRIBE = "README.md"
+
+# Directories to ignore in find_packages
+EXCLUDES = ()
+
+
+# helper functions
+def read(*parts):
+    """
+    returns contents of file
