@@ -50,3 +50,16 @@ def get_requires(path=REQUIRE_PATH):
         line = line.strip()
         if line and not line.startswith("#"):
             yield line
+
+
+# Define the configuration
+CONFIG = {
+    "name": NAME,
+    "version": VERSION,
+    "description": DESCRIPTION,
+    "long_description": LONG_DESCRIPTION,
+    "long_description_content_type": "text/markdown",
+    "classifiers": CLASSIFIERS,
+    "keywords": KEYWORDS,
+    "license": LICENSE,
+    "author": AUTHOR,
