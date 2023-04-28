@@ -63,3 +63,18 @@ CONFIG = {
     "keywords": KEYWORDS,
     "license": LICENSE,
     "author": AUTHOR,
+    "author_email": EMAIL,
+    "url": REPOSITORY,
+    "project_urls": {"Source": REPOSITORY},
+    "packages": find_packages(
+        where=PROJECT, include=["flame_pytorch", "flame_pytorch.*"], exclude=EXCLUDES
+    ),
+    "install_requires": list(get_requires()),
+    "python_requires": ">=3.8",
+    "test_suite": "tests",
+    "tests_require": ["pytest>=3"],
+    "include_package_data": True,
+}
+
+if __name__ == "__main__":
+    setup(**CONFIG)
