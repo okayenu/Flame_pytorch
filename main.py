@@ -14,3 +14,11 @@ Copyright 2019 Max-Planck-Gesellschaft zur Foerderung der Wissenschaften e.V. (M
 Max Planck Institute for Intelligent Systems and the Max Planck Institute for Biological Cybernetics.
 All rights reserved.
 
+More information about FLAME is available at http://flame.is.tue.mpg.de.
+
+For questions regarding the PyTorch implementation please contact soubhik.sanyal@tuebingen.mpg.de
+"""
+
+import numpy as np
+import pyrender
+import torch
