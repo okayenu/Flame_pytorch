@@ -30,3 +30,11 @@ config = get_config()
 radian = np.pi / 180.0
 flamelayer = FLAME(config)
 
+# Creating a batch of mean shapes
+shape_params = torch.zeros(8, 100).cuda()
+
+# Creating a batch of different global poses
+# pose_params_numpy[:, :3] : global rotaation
+# pose_params_numpy[:, 3:] : jaw rotaation
+pose_params_numpy = np.array(
+    [
