@@ -22,3 +22,11 @@ For questions regarding the PyTorch implementation please contact soubhik.sanyal
 import numpy as np
 import pyrender
 import torch
+import trimesh
+
+from flame_pytorch import FLAME, get_config
+
+config = get_config()
+radian = np.pi / 180.0
+flamelayer = FLAME(config)
+
