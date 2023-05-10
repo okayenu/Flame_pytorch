@@ -38,3 +38,11 @@ shape_params = torch.zeros(8, 100).cuda()
 # pose_params_numpy[:, 3:] : jaw rotaation
 pose_params_numpy = np.array(
     [
+        [0.0, 30.0 * radian, 0.0, 0.0, 0.0, 0.0],
+        [0.0, -30.0 * radian, 0.0, 0.0, 0.0, 0.0],
+        [0.0, 85.0 * radian, 0.0, 0.0, 0.0, 0.0],
+        [0.0, -48.0 * radian, 0.0, 0.0, 0.0, 0.0],
+        [0.0, 10.0 * radian, 0.0, 0.0, 0.0, 0.0],
+        [0.0, -15.0 * radian, 0.0, 0.0, 0.0, 0.0],
+        [0.0, 0.0 * radian, 0.0, 0.0, 0.0, 0.0],
+        [0.0, -0.0 * radian, 0.0, 0.0, 0.0, 0.0],
