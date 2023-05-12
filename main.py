@@ -46,3 +46,11 @@ pose_params_numpy = np.array(
         [0.0, -15.0 * radian, 0.0, 0.0, 0.0, 0.0],
         [0.0, 0.0 * radian, 0.0, 0.0, 0.0, 0.0],
         [0.0, -0.0 * radian, 0.0, 0.0, 0.0, 0.0],
+    ],
+    dtype=np.float32,
+)
+pose_params = torch.tensor(pose_params_numpy, dtype=torch.float32).cuda()
+
+# Cerating a batch of neutral expressions
+expression_params = torch.zeros(8, 50, dtype=torch.float32).cuda()
+flamelayer.cuda()
