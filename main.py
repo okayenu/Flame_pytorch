@@ -54,3 +54,11 @@ pose_params = torch.tensor(pose_params_numpy, dtype=torch.float32).cuda()
 # Cerating a batch of neutral expressions
 expression_params = torch.zeros(8, 50, dtype=torch.float32).cuda()
 flamelayer.cuda()
+
+# Forward Pass of FLAME, one can easily use this as a layer in a Deep learning Framework
+vertice, landmark = flamelayer(
+    shape_params, expression_params, pose_params
+)  # For RingNet project
+print(vertice.size(), landmark.size())
+
+if config.optimize_eyeballpose and config.optimize_neckpose:
