@@ -62,3 +62,11 @@ vertice, landmark = flamelayer(
 print(vertice.size(), landmark.size())
 
 if config.optimize_eyeballpose and config.optimize_neckpose:
+    neck_pose = torch.zeros(8, 3).cuda()
+    eye_pose = torch.zeros(8, 6).cuda()
+    vertice, landmark = flamelayer(
+        shape_params, expression_params, pose_params, neck_pose, eye_pose
+    )
+
+# Visualize Landmarks
+# This visualises the static landmarks and the pose dependent dynamic landmarks used for RingNet project
