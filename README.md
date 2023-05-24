@@ -16,3 +16,12 @@ Tianye Li*, Timo Bolkart*, Michael J. Black, Hao Li, and Javier Romero
 ACM Transactions on Graphics (Proc. SIGGRAPH Asia) 2017
 ```
 
+and the [supplementary video](https://youtu.be/36rPTkhiJTM).
+
+## Installation
+
+The code uses **Python 3.7** and it is tested on PyTorch 1.4.
+
+### Setup FLAME PyTorch Virtual Environment
+
+```shell
