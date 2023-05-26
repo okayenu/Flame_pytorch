@@ -25,3 +25,12 @@ The code uses **Python 3.7** and it is tested on PyTorch 1.4.
 ### Setup FLAME PyTorch Virtual Environment
 
 ```shell
+python3.7 -m venv <your_home_dir>/.virtualenvs/FLAME_PyTorch
+source <your_home_dir>/.virtualenvs/FLAME_PyTorch/bin/activate
+```
+
+### Clone the project and install requirements
+
+```shell
+git clone https://github.com/soubhiksanyal/FLAME_PyTorch
+cd FLAME_PyTorch
