@@ -61,3 +61,12 @@ FLAME is available under [Creative Commons Attribution license](https://creative
 
 ## Referencing FLAME
 
+When using this code in a scientific publication, please cite
+
+```bibtex
+@article{FLAME:SiggraphAsia2017,
+  title = {Learning a model of facial shape and expression from {4D} scans},
+  author = {Li, Tianye and Bolkart, Timo and Black, Michael. J. and Li, Hao and Romero, Javier},
+  journal = {ACM Transactions on Graphics, (Proc. SIGGRAPH Asia)},
+  volume = {36},
+  number = {6},
