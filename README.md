@@ -52,3 +52,12 @@ Please note we used the pose dependent conture for the face as introduced by [Ri
 Run the following command from the terminal
 
 ```shell
+python main.py
+```
+
+## License
+
+FLAME is available under [Creative Commons Attribution license](https://creativecommons.org/licenses/by/4.0/). By using the model or the code code, you acknowledge that you have read the license terms (https://flame.is.tue.mpg.de/modellicense.html), understand them, and agree to be bound by them. If you do not agree with these terms and conditions, you must not use the code.
+
+## Referencing FLAME
+
