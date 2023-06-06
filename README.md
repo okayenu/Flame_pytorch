@@ -70,3 +70,12 @@ When using this code in a scientific publication, please cite
   journal = {ACM Transactions on Graphics, (Proc. SIGGRAPH Asia)},
   volume = {36},
   number = {6},
+  year = {2017},
+  url = {https://doi.org/10.1145/3130800.3130813}
+}
+```
+
+Additionally if you use the pose dependent dynamic landmarks from this codebase, please cite 
+
+```bibtex
+@inproceedings{RingNet:CVPR:2019,
