@@ -79,3 +79,12 @@ Additionally if you use the pose dependent dynamic landmarks from this codebase,
 
 ```bibtex
 @inproceedings{RingNet:CVPR:2019,
+title = {Learning to Regress 3D Face Shape and Expression from an Image without 3D Supervision},
+author = {Sanyal, Soubhik and Bolkart, Timo and Feng, Haiwen and Black, Michael},
+booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
+month = jun,
+year = {2019},
+month_numeric = {6}
+}
+```
+
