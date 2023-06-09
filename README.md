@@ -88,3 +88,12 @@ month_numeric = {6}
 }
 ```
 
+## Supported Projects
+
+FLAME supports several projects such as
+
+* [CoMA: Convolutional Mesh Autoencoders](https://github.com/anuragranj/coma)
+* [RingNet: 3D Face Shape and Expression Reconstruction from an Image without 3D Supervision](https://github.com/soubhiksanyal/RingNet)
+* [VOCA: Voice Operated Character Animation](https://github.com/TimoBolkart/voca)
+* [Expressive Body Capture: 3D Hands, Face, and Body from a Single Image](https://github.com/vchoutas/smplify-x)
+* [ExPose: Monocular Expressive Body Regression through Body-Driven Attention](https://github.com/vchoutas/expose)
