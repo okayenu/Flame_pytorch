@@ -97,3 +97,15 @@ FLAME supports several projects such as
 * [VOCA: Voice Operated Character Animation](https://github.com/TimoBolkart/voca)
 * [Expressive Body Capture: 3D Hands, Face, and Body from a Single Image](https://github.com/vchoutas/smplify-x)
 * [ExPose: Monocular Expressive Body Regression through Body-Driven Attention](https://github.com/vchoutas/expose)
+* [GIF: Generative Interpretable Faces](https://github.com/ParthaEth/GIF)
+* [DECA: Detailed Expression Capture and Animation](https://github.com/YadiraF/DECA)
+
+FLAME is part of [SMPL-X: : A new joint 3D model of the human body, face and hands together](https://github.com/vchoutas/smplx)
+
+## Contact
+
+If you have any questions regarding the PyTorch implementation then you can contact us at soubhik.sanyal@tuebingen.mpg.de and timo.bolkart@tuebingen.mpg.de.
+
+## Acknowledgements
+
+This repository is build with modifications from [SMPLX](https://github.com/vchoutas/smplx).
