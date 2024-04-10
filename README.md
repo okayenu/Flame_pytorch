@@ -110,3 +110,4 @@ If you have any questions regarding the PyTorch implementation then you can cont
 
 This repository is build with modifications from [SMPLX](https://github.com/vchoutas/smplx).
 
+<!-- maintenance 89 -->
